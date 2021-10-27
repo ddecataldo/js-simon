@@ -26,19 +26,20 @@ for (let i = 0; i < 5; i++) {
 // Stampo i numeri random
 alert(numeriRandom);
 
-setTimeout(arrayNumeriRandomUtente, 30000);
+setTimeout(arrayNumeriRandomUtente, 1000);
 
 
 function arrayNumeriRandomUtente(){
-    let numeriUtente;
-    do {
-        numeriUtente = prompt("Inserisci un numero");
-        console.log(numeriUtente)
-        numeriRandomUtente.push(numeriUtente);
 
-    } while(!isNaN(parseInt(numeriUtente)) && numeriRandomUtente.length < 5)
+    while(numeriRandomUtente.length < 5){
+        let numeroScelto = parseInt(prompt("Inserisci un numero"));
+        if(isNaN(numeroScelto)){
+            alert("Hai sbagliato. Devi inserire un numero");
+            return
+        }
 
-    return numeriUtente;
+        numeriRandomUtente.push(numeroScelto);
+    }
+    console.log(numeriRandomUtente);
+
 }
-
-console.log(arrayNumeriRandomUtente());
