@@ -3,11 +3,6 @@ Da li parte un timer di 30 secondi.
 Dopo 30 secondi l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati. */
 
-// Creare 5 numeri random
-// Aspettare 30 secondi e chiedere all'utente 5 numeri
-// Verificare se tra i numeri inseriti dall'utente c'è qualcuno che corrisponde ai numeri random generati
-// Comunicare all'utente quanti e quali numeri sono stati indovinati
-
 // Creo una funzione che mi permette di generare dei numeri random impostando un valore minimo e un valore massimo
 function generateRandomNum(minNumber, maxNumber) {
     const numRandom = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
@@ -40,6 +35,25 @@ function arrayNumeriRandomUtente(){
 
         numeriRandomUtente.push(numeroScelto);
     }
-    console.log(numeriRandomUtente);
 
 }
+
+
+const numeroUtente = [];
+
+console.log(arrayNumeriRandomUtente(), "array")
+
+for (let i = 0; i < numeriRandom.length; i++) {
+
+    console.log(numeriRandom[i])
+    console.log(numeriRandomUtente[i])
+    
+
+    if(numeriRandom[i] === numeriRandomUtente[i]){
+        numeroUtente.push(numeriRandom[i])
+    }
+}
+
+console.log(numeroUtente)
+
+console.log(`I numeri vincenti sono ${numeroUtente.length} e sono ${numeroUtente.toString()}`)
